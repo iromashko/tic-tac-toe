@@ -1,0 +1,15 @@
+<div class="p-3">
+  <h1>Current Player: {{ player }}</h1>
+
+  <button (click)="newGame()">New Game</button>
+
+  <h2 *ngIf="winner">Player {{ winner }} won the game!</h2>
+
+  <main class="grid grid-cols-3">
+    <app-square
+      *ngFor="let val of squares; let i = index"
+      [value]="val"
+      (click)="makeMove(i)"
+    ></app-square>
+  </main>
+</div>
